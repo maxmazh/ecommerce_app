@@ -11,13 +11,14 @@
     
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="popup.css">
 </head>
 <body>
     <main>
         <section class="list_products">
-            <ul>
-                <li class="js_products products">
-                    <!-- <img src="resourses/img_AppleWatch5.png" alt="Apple Watch Series 5 SE">
+            <ul class="js_products products">
+                <!-- <li class="js_products products">
+                    <img src="resourses/img_AppleWatch5.png" alt="Apple Watch Series 5 SE">
                     <div class="item_product">
                         <h2>Apple Watch</h2>
                         <h3>Series 5 SE</h3>
@@ -25,15 +26,15 @@
                             <div class="product_price"><span>$ </span>529.99</div>
                             <button class="btn_basket"></button>
                         </div>
-                    </div> -->
-                </li>
+                    </div>
+                </li> -->
             </ul>
         </section>
-
 
         <section class="list_basket">
             <div class="basket">
                 <h1>Корзина</h1>
+                <button class="btn_big_basket"></button>
             </div>
             <div class="orders">
                 <h1>Заказы</h1>
@@ -41,6 +42,15 @@
         </section>
     </main>
 
+    <div class="popup_item js_popup">
+        <div class="popup_item_content js_popup_content">
+            <h1>Новая страница!!!!!!!!!!!</h1>
+        </div>
+        <button class="btn_popup_close js_popup_close_btn">Закрыть</button>
+
+    </div>
+
+    <!-- <script src="popup.js"></script> -->
     <script type="module" src="index.js"></script>
 </body>
 </html>

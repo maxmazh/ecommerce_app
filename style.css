@@ -7,14 +7,16 @@ body {
 }
 
 main {
-    padding: 50px 0px 50px 140px;
+    padding: 50px 37px 50px 140px;
     display: flex;
     flex-direction: row;
 }
 
 h1 {
+    margin-bottom: 20px;
     color: #1A1F16;
     font-size: 39px;
+    text-align: center;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -27,6 +29,7 @@ h2 {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    cursor: pointer;
 }
 
 h3 {
@@ -37,22 +40,39 @@ h3 {
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.32px;
+    cursor: pointer;
+}
+
+.list_products {
+    max-width: 956px;
+    padding-right: 40px;
+    border-right: 4px solid rgba(26, 31, 22, 0.50);
+    border-radius: 4px;
 }
 
 .list_basket {
+    padding-left: 37px;
+    width: 345px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .products {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 48px;
 }
 
 .item_product {
     margin-top: 8px;
     padding: 8px;
+}
+
+.img_item {
+    border-radius: 22px;
+    cursor: pointer;
 }
 
 .row_price {
@@ -80,4 +100,24 @@ h3 {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    cursor: pointer;
+}
+
+.btn_big_basket {
+    margin-left: auto;
+    margin-right: auto;
+    width: 163px;
+    height: 43px;
+    border: none;
+    border-radius: 12px;
+    background-image: url('resourses/btn_basket.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.btn_basket:hover,
+.btn_big_basket:hover {
+    opacity: 0.8;
 }

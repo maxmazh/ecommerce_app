@@ -1,8 +1,17 @@
-export function createProductsController(
-    model,
-    view,
-    storage
-) {
+export function createProductsController(model, view, storage) {
+    function openProduct(id) {
+        const product = model.getProduct(id);
+
+        if (!product) {
+            console.error('Товар не найден:', id);
+            return;
+        }
+
+        view.openPopup(product);
+    }
+
+    view.setOnProductClick(openProduct);
+
     return {
         async init() {
             try {
