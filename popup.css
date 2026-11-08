@@ -2,20 +2,16 @@
     position: fixed;
     top: 0;
     left: 0;
-    padding: 56px 0px 20px 150px;
+    padding: 56px 60px 20px 150px;
     width: 76%;
     height: 100%;
-    /* display: flex; */
-    /* justify-content: center;
-    align-items: center; */
-    /* padding: 20px; */
     background-color: #EDEDED;
     opacity: 0;
     visibility: hidden;
     transition: all 0.2s ease;
     overflow-y: auto;
     scrollbar-width: none;
-    /* -ms-overflow-style: none; */
+    -ms-overflow-style: none;
 }
 
 .popup_item_open {
@@ -51,6 +47,8 @@
 }
 
 h4 {
+    margin-top: 32px;
+    margin-bottom: 8px;
     font-size: 31.25px;
     font-style: normal;
     font-weight: 400;
@@ -68,7 +66,9 @@ h4 {
 }
 
 .popup_full_item {
-
+    margin-top: 32px;
+    border-top: 4px solid rgba(26, 31, 22, 0.50);
+    border-radius: 4px;
 }
 
 .img_popup_item {
@@ -86,6 +86,7 @@ h4 {
 }
 
 .product_price {
+    margin-bottom: 8px;
     color: #1A1F16;
     font-size: 31.25px;
     font-style: normal;
@@ -99,6 +100,24 @@ h4 {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.btn_popup_basket {
+    margin-top: 16px;
+    float: right;
+    width: 178px;
+    height: 43px;
+    border: none;
+    border-radius: 12px;
+    background-image: url('resourses/btn_popup_basket.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.btn_popup_basket:hover {
+    opacity: 0.8;
 }
 
 .full_description_text {

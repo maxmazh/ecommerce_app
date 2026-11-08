@@ -4,8 +4,10 @@ export function createProductsView(selector) {
     const popupNode = document.querySelector('.js_popup');
     const popupContentNode = document.querySelector('.js_popup_content');
     const btnCloseNode = document.querySelector('.js_popup_close_btn');
+    const basketProductsNode = document.querySelector('.js_basket_products');
 
     let onProductClick = () => {};
+    let onAddToCart = () => {};
 
     function createProductCard(product) {
         const card = document.createElement('li');
@@ -16,7 +18,7 @@ export function createProductsView(selector) {
         image.src = product.imageURL;
         image.alt = product.title;
         image.onerror = () => {
-            image.style.display = 'none';
+            image.src = "/resourses/img_nodownload.png";
             console.warn('Картинка не загрузилась:', product.imageURL);
         };
 
@@ -38,6 +40,10 @@ export function createProductsView(selector) {
         const btn = document.createElement('button');
         btn.classList.add('btn_basket');
 
+        btn.addEventListener('click', () => {
+            onAddToCart(product.id);
+        });
+
         title.addEventListener('click', () => {
             onProductClick(product.id);
         });
@@ -57,6 +63,35 @@ export function createProductsView(selector) {
         return card;
     }
 
+    function renderCart(cart) {
+        basketProductsNode.replaceChildren();
+
+        cart.forEach((product) => {
+            const item = document.createElement('div');
+            item.classList.add('basket_product');
+
+            const image = document.createElement('img');
+            image.classList.add('basket_product_img');
+            image.src = product.imageURL;
+            image.alt = product.title;
+            image.onerror = () => {
+                image.onerror = null;
+                image.src = '/resourses/img_nodownload.png';
+            };
+
+            const quantity = document.createElement('span');
+            quantity.classList.add('basket_product_quantity');
+            quantity.textContent = product.quantity;
+
+            if (product.quantity > 1) {
+                item.append(image, quantity);
+            } else {item.append(image)}
+            
+
+            basketProductsNode.append(item);
+        });
+    }
+
     function renderPopup(product) {
         popupContentNode.replaceChildren();
 
@@ -74,7 +109,7 @@ export function createProductsView(selector) {
         image.src = product.imageURL;
         image.alt = product.title;
         image.onerror = () => {
-            image.style.display = 'none';
+            image.src = "/resourses/img_nodownload.png";
             console.warn('Картинка не загрузилась:', product.imageURL);
         };
 
@@ -99,6 +134,12 @@ export function createProductsView(selector) {
         short_description_text.classList.add('short_description_text');
         short_description_text.textContent = product.short_description_text;
 
+        const btn = document.createElement('button');
+        btn.classList.add('btn_popup_basket');
+
+        btn.addEventListener('click', () => {
+            onAddToCart(product.id);
+        });
 
         const full_description_title = document.createElement('h4');
         full_description_title.textContent = "Описание";
@@ -113,7 +154,7 @@ export function createProductsView(selector) {
 
         full_item.append(full_description_title, full_description_text);
 
-        short_item.append(title, description, evaluation, price, short_description_text);
+        short_item.append(title, description, evaluation, price, short_description_text, btn);
 
         popupNode.classList.add('popup_item_open');
     }
@@ -141,6 +182,10 @@ export function createProductsView(selector) {
         setOnProductClick(callback) {
             onProductClick = callback;
         },
+        setOnAddToCart(callback) {
+            onAddToCart = callback;
+        },
+        renderCart,
         render(products) {
             productsNode.replaceChildren();
 
