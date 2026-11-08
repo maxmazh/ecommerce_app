@@ -2,21 +2,111 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    padding: 56px 0px 20px 150px;
+    width: 76%;
     height: 100%;
-    /* display: none; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
     /* padding: 20px; */
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #EDEDED;
     opacity: 0;
     visibility: hidden;
     transition: all 0.2s ease;
+    overflow-y: auto;
+    scrollbar-width: none;
+    /* -ms-overflow-style: none; */
 }
 
 .popup_item_open {
-    /* display: flex; */
     opacity: 1;
     visibility: visible;
+}
+
+.btn_popup_close {
+    margin-bottom: 24px;
+    color: #1A1F16;
+    background-color: #EDEDED;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+    cursor: pointer;
+}
+
+.popup_short_item_wrapper h2 {
+    font-size: 61px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.popup_short_item_wrapper h3 {
+    font-size: 31.25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+h4 {
+    font-size: 31.25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.popup_item_content {
+    color: #1A1F16;
+}
+
+.popup_short_item_wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.popup_full_item {
+
+}
+
+.img_popup_item {
+    width: 258px;
+    height: 318px;
+    border-radius: 22px;
+}
+
+.popup_short_item {
+
+}
+
+.img_popup_evaluation {
+    
+}
+
+.product_price {
+    color: #1A1F16;
+    font-size: 31.25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.short_description_text {
+    align-self: stretch;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.full_description_text {
+    align-self: stretch;
+    color: #60695C;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.4px;
 }
