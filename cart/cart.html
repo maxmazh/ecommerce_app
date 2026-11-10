@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <main>
+        <section class="list_cart">
+            <a href="/index.html" class="btn_back_main">< Список товаров</a>
+            <h1>Проверь корзину</h1>
+            <ul class="js_cart_products cart_products">
+                <div class="empty_cart">
+                    <h3>Корзина пуста</h3>
+                    <img class="img_empty_cart" src="/resourses/empty_cart.png" alt="пустая корзина">
+                </div>
+            </ul>
+        </section>
+
+        <section class="cart_info_sect">
+            <div class="cart_info">
+                <h1>Корзина</h1>
+                <div class="basket_products js_basket_products"></div>
+                <div class="cart_summary">
+                    <div class="cart_summary_info">
+                        <p>Количество товаров:</p>
+                        <span class="js_cart_total_quantity">0</span>
+                    </div>
+
+                    <div class="cart_summary_info">
+                        <p>Общая стоимость:</p>
+                        <span class="js_cart_total_price">$ 0</span>
+                    </div>
+                </div>
+                <button class="js_btn_order btn_order"></button>
+            </div>
+        </section>
+    </main>
+
+
+    <script type="module" src="/cart/cart.js"></script>
+    <!-- <script type="module" src="index.js"></script> -->
+</body>
+</html>

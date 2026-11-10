@@ -6,9 +6,9 @@ import { createProductsView } from './view.js';
 
 import { createProductsController } from './controller.js';
 
-import { createCartModel } from './cartModel.js';
+import { createCartModel } from './cart/cartModel.js';
 
-import { getCart, saveCart } from './cartStorage.js';
+import { getCart, saveCart } from './cart/cartStorage.js';
 
 const model = createProductsModel();
 
